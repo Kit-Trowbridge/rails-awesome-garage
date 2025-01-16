@@ -9,3 +9,10 @@
   <%= review.comment %>
   <%= review.rating %>
 <% end %>
+
+<h4>Leave a comment:</h4>
+<%= simple_form_for [@car, @review] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating, collection: (1..5) %>
+  <%= f.submit 'Submit' %>
+<% end %>
