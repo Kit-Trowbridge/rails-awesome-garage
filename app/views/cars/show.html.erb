@@ -2,8 +2,12 @@
 <h4><%= @car.model %></h4>
 <p><%= @car.year %></p>
 <p><%= @car.fuel %></p>
+<p><%= @car.created_at %></p>
 <p><%= @car.owner.nickname %></p>
 
+<%= simple_form_for [@car, @favorite] do |f| %>
+  <%= f.submit 'Add to favorites <3' %>
+<% end %>
 
 <% @car.reviews.each do |review| %>
   <%= review.comment %>

@@ -8,5 +8,6 @@ class CarsController < ApplicationController
     # how do we show time car was created?
     @reviews = @car.reviews
     @review = Review.new
+    @favorite = Favorite.new
   end
 end
