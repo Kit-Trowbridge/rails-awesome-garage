@@ -3,3 +3,9 @@
 <p><%= @car.year %></p>
 <p><%= @car.fuel %></p>
 <p><%= @car.owner.nickname %></p>
+
+
+<% @car.reviews.each do |review| %>
+  <%= review.comment %>
+  <%= review.rating %>
+<% end %>
