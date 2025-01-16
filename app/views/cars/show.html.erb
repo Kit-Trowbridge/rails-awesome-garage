@@ -5,8 +5,10 @@
 <p><%= @car.created_at %></p>
 <p><%= @car.owner.nickname %></p>
 
-<%= simple_form_for [@car, @favorite] do |f| %>
-  <%= f.submit 'Add to favorites <3' %>
+<% if 'pseudo code car is not in favorites,' %>
+  <%= simple_form_for [@car, @favorite] do |f| %>
+    <%= f.submit 'Add to favorites <3' %>
+  <% end %>
 <% end %>
 
 <% @car.reviews.each do |review| %>

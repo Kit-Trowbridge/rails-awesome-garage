@@ -5,7 +5,6 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
-    # how do we show time car was created?
     @reviews = @car.reviews
     @review = Review.new
     @favorite = Favorite.new
