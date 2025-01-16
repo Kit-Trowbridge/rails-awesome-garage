@@ -1,0 +1,9 @@
+<h1>Awesome Garage</h1>
+
+<% @cars.each do |car| %>
+  <h3><%= car.brand %></h3>
+  <h4><%= car.model %></h4>
+  <p><%= car.year %></p>
+  <p><%= car.fuel %></p>
+  <p><%= car.owner.nickname %></p>
+<% end %>
