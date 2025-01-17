@@ -3,6 +3,17 @@
 <div class="card-container">
   <div class="car-card">
     <%= render 'car', car: @car, favorite: @favorite%>
+    <div class="new-review-section">
+      <p class="comment-btn">Leave a comment:</p>
+      <!--drop down-->
+      <div class="review-form">
+        <%= simple_form_for [@car, @review] do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :rating, collection: (1..5) %>
+          <%= f.submit 'Submit' %>
+        <% end %>
+      </div>
+    </div>
 
     <!--Make bootstrap list-->
     <ul class="list-group list-group-flush">
@@ -17,18 +28,5 @@
         </li>
       <% end %>
     </ul>
-
-
-    <div class="new-review-section">
-      <p class="comment-btn">Leave a comment:</p>
-      <!--drop down-->
-      <div class="review-form">
-        <%= simple_form_for [@car, @review] do |f| %>
-          <%= f.input :comment %>
-          <%= f.input :rating, collection: (1..5) %>
-          <%= f.submit 'Submit' %>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
