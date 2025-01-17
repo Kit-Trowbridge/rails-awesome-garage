@@ -1,13 +1,12 @@
 <!--might want to move car-card class to individual view so we can fit more inside-->
 <div class="car-card">
   <div class="car-specs">
-    <h3><%= link_to car.brand, car_path(car) %></h3>
-    <h4><%= car.model %></h4>
+    <h3><%= link_to "#{car.brand} #{car.model}", car_path(car) %></h3>
     <%= car.year %><br>
     <% if car.fuel.present? %>
       Fuel: <%= car.fuel.capitalize %><br>
     <% end %>
-    <%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %>
+    <em style="font-size: 14px"><%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %></em>
   </div>
   <div class="car-img" style="background-image: url(<%= car.image_url %>)">
   </div>
