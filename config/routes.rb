@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # root to: 'cars#index'
+  root to: 'pages#index'
   resources :cars, only: [:index, :show] do
     resources :reviews, only: :create
     # not sure if this needs to be nested .. probably will only be a button .. or should be
