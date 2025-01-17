@@ -1,7 +1,9 @@
 .new-review-section {
+  width: 50%;
   min-height: 50px;
   padding: 20px;
-  border: 1px solid blue;
+  margin: 20px auto 40px auto;
+  border: 1px dotted $bs-grey;
   p {
     font-size: 18px;
   }

@@ -3,6 +3,22 @@
 <div class="card-container">
   <div class="car-card">
     <%= render 'car', car: @car, favorite: @favorite%>
+
+    <!--Make bootstrap list-->
+    <ul class="list-group list-group-flush border-top border-bottom">
+      <% @car.reviews.each do |review| %>
+        <li class="list-group-item d-flex flex-row justify-content-between">
+          <span><em><%= review.comment %></em></span>
+          <span>
+            <% if review.rating.present? %>
+              <%= "★" * review.rating %>
+            <% end %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+
+
     <div class="new-review-section">
       <p class="comment-btn">Leave a comment:</p>
       <!--drop down-->
@@ -14,19 +30,5 @@
         <% end %>
       </div>
     </div>
-
-    <!--Make bootstrap list-->
-    <ul class="list-group list-group-flush">
-      <% @car.reviews.each do |review| %>
-        <li class="list-group-item d-flex flex-row justify-content-between">
-          <span><%= review.comment %></span>
-          <span>
-            <% if review.rating.present? %>
-              <%= "★" * review.rating %>
-            <% end %>
-          </span>
-        </li>
-      <% end %>
-    </ul>
   </div>
 </div>
