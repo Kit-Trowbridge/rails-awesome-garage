@@ -1,4 +1,8 @@
 .new-review-section {
   min-height: 50px;
+  padding: 20px;
   border: 1px solid blue;
+  p {
+    font-size: 18px;
+  }
 }

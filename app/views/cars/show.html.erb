@@ -8,15 +8,18 @@
     <% @car.reviews.each do |review| %>
       <li class="list-group-item d-flex flex-row justify-content-between">
         <span><%= review.comment %></span>
-        <span><%= "★" * review.rating %></span>
+        <span>
+          <% if review.rating.present? %>
+            <%= "★" * review.rating %>
+          <% end %>
+        </span>
       </li>
     <% end %>
   </ul>
 
 
-  <!--need to change class name-->
   <div class="new-review-section">
-    <h4 class="comment-btn">Leave a comment:</h4>
+    <p class="comment-btn">Leave a comment:</p>
     <!--drop down-->
     <div class="review-form">
       <%= simple_form_for [@car, @review] do |f| %>
