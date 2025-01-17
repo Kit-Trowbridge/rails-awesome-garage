@@ -1,9 +1,6 @@
-<h3><%= @car.brand %></h3>
-<h4><%= @car.model %></h4>
-<p><%= @car.year %></p>
-<p><%= @car.fuel %></p>
-<p><%= @car.created_at %></p>
-<p><%= @car.owner.nickname %></p>
+<!--Can I adapt the partial on this page?-->
+<!--Because I'll want to add to it with the favorite button and comments etc-->
+<%= render 'car', car: @car %>
 
 <% if @car.favorites.empty? %>
   <%= simple_form_for [@car, @favorite] do |f| %>
