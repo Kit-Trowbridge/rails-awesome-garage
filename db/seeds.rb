@@ -1,5 +1,5 @@
-Favorite.destroy_all
 Review.destroy_all
+Favorite.destroy_all
 Car.destroy_all
 Owner.destroy_all
 
