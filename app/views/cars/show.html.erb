@@ -26,7 +26,7 @@
         <%= simple_form_for [@car, @review] do |f| %>
           <%= f.input :comment %>
           <%= f.input :rating, collection: (1..5) %>
-          <%= f.submit 'Submit' %>
+          <%= f.submit 'Submit', class: "button" %>
         <% end %>
       </div>
     </div>
