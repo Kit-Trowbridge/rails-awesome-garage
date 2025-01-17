@@ -1,13 +1,9 @@
 <nav class="navbar fixed-top bg-body-tertiary">
   <div class="container-fluid">
     <%= link_to "🏁 Awesome Garage", root_path, class: "navbar-brand" %>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <%= link_to "Home", cars_path, class: "nav-link active" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "My garage", favorites_path, class: "nav-link" %>
-      </li>
-    </ul>
+    <div class="navbar-nav d-flex flex-row">
+      <%= link_to "Home", cars_path, class: "nav-link pe-3" %>
+      <%= link_to "My garage", favorites_path, class: "nav-link" %>
+    </div>
   </div>
 </nav>
