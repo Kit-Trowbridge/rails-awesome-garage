@@ -1,4 +1,6 @@
 .owner-badge {
+  // figured out height from inspecting and adding box model heights
+  margin-top: -20.5px;
   padding: 10px 15px;
   // sets width = to content
   width: max-content;
@@ -6,4 +8,5 @@
   font-size: 14px;
   color: white;
   border-radius: 50%;
+  text-align: right;
 }
