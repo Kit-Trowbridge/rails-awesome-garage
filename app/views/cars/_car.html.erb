@@ -2,7 +2,7 @@
 <div class="car-card">
   <div class="car-specs">
     <h3><%= link_to "#{car.brand} #{car.model}", car_path(car) %></h3>
-    <%= car.year %><br>
+    Year: <%= car.year %><br>
     <% if car.fuel.present? %>
       Fuel: <%= car.fuel.capitalize %><br>
     <% end %>

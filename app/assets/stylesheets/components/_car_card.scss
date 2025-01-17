@@ -1,8 +1,16 @@
 .car-card {
-  border: 1px solid black;
-  background-color: bisque;
+  border: 0.1px solid black;
+  background-color: white;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
   h3 {
     font-family: $header-font;
   }
   margin-bottom: 50px;
+  a {
+    color:black;
+    transition: 0.2s ease;
+    &:hover {
+      color: red;
+    }
+  }
 }
