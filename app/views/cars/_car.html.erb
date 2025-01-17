@@ -1,5 +1,18 @@
 <!--might want to move car-card class to individual view so we can fit more inside-->
 <div class="car-card">
+  <!--Yield to insert favorite button-->
+  <% if favorite%>
+  <div class="favorite-btn">
+      <!--Want to put this inside car_img - how do I put this in the render-->
+      <% if car.favorites.empty? %>
+        <%= simple_form_for [car, favorite] do |f| %>
+          <%= f.submit 'Add to favorites <3' %>
+        <% end %>
+      <% else %>
+        <p>This car is already in your garage</p>
+      <% end %>
+    </div>
+  <% end %>
   <div class="car-specs">
     <h3><%= link_to "#{car.brand} #{car.model}", car_path(car) %></h3>
     Year: <%= car.year %><br>
@@ -9,8 +22,6 @@
     <em style="font-size: 14px"><%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %></em>
   </div>
   <div class="car-img" style="background-image: url(<%= car.image_url %>)">
-    <!--Yield to insert favorite button-->
-    <%= yield :favorite %>
   </div>
   <div class="new-review-section d-flex justify-content-end">
     <div class="pe-3">
