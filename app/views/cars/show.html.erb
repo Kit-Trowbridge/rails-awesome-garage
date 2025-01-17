@@ -9,6 +9,8 @@
   <%= simple_form_for [@car, @favorite] do |f| %>
     <%= f.submit 'Add to favorites <3' %>
   <% end %>
+<% else %>
+  <p>This car is already in your garage</p>
 <% end %>
 
 <% @car.reviews.each do |review| %>
