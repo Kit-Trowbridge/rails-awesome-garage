@@ -6,6 +6,10 @@
   <h4><%= favorite.car.model %></h4>
   <p><%= favorite.car.year %></p>
   <p><%= favorite.car.fuel %></p>
-  <p><%= favorite.car.created_at %></p>
+  <p><%= favorite.created_at %></p>
   <p><%= favorite.car.owner.nickname %></p>
+  <%= link_to 'Delete',
+    favorite_path(favorite),
+    data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
+  %>
 <% end %>

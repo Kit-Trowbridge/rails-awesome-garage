@@ -1,5 +1,4 @@
 class FavoritesController < ApplicationController
-
   def create
     @car = Car.find(params[:car_id])
     @favorite = Favorite.new
@@ -16,6 +15,8 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    redirect_to favorite_path(@favorite), status: :see_other
   end
-
 end
