@@ -2,14 +2,14 @@
 <div class="car-card">
   <!--Yield to insert favorite button-->
   <% if favorite%>
-  <div class="favorite-btn">
+    <div class="favorite-btn">
       <!--Want to put this inside car_img - how do I put this in the render-->
       <% if car.favorites.empty? %>
         <%= simple_form_for [car, favorite] do |f| %>
           <%= f.submit 'Add to favorites <3' %>
         <% end %>
       <% else %>
-        <p>This car is already in your garage</p>
+        <em><p>This car is already in your garage</p></em>
       <% end %>
     </div>
   <% end %>
