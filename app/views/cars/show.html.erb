@@ -1,23 +1,37 @@
 <!--Can I adapt the partial on this page?-->
 <!--Because I'll want to add to it with the favorite button and comments etc-->
-<%= render 'car', car: @car %>
+<div class="card-container">
+  <%= render 'car', car: @car %>
 
-<% if @car.favorites.empty? %>
-  <%= simple_form_for [@car, @favorite] do |f| %>
-    <%= f.submit 'Add to favorites <3' %>
+  <!--Want to put this inside car_img - how do I put this in the render-->
+  <% if @car.favorites.empty? %>
+    <%= simple_form_for [@car, @favorite] do |f| %>
+      <%= f.submit 'Add to favorites <3' %>
+    <% end %>
+  <% else %>
+    <p>This car is already in your garage</p>
   <% end %>
-<% else %>
-  <p>This car is already in your garage</p>
-<% end %>
 
-<% @car.reviews.each do |review| %>
-  <%= review.comment %>
-  <%= review.rating %>
-<% end %>
+  <!--Make bootstrap list-->
+  <ul class="list-group list-group-flush">
+    <% @car.reviews.each do |review| %>
+      <li class="list-group-item d-flex flex-row justify-content-between">
+        <span><%= review.comment %></span>
+        <span><%= "★" * review.rating %></span>
+      </li>
+    <% end %>
+  </ul>
 
-<h4>Leave a comment:</h4>
-<%= simple_form_for [@car, @review] do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :rating, collection: (1..5) %>
-  <%= f.submit 'Submit' %>
-<% end %>
+  <!--need to change class name-->
+  <div class="review-section">
+    <h4 class="comment-btn">Leave a comment:</h4>
+    <!--drop down-->
+    <div class="review-form">
+      <%= simple_form_for [@car, @review] do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :rating, collection: (1..5) %>
+        <%= f.submit 'Submit' %>
+      <% end %>
+    </div>
+  </div>
+</div>
