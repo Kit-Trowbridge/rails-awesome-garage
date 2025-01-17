@@ -2,7 +2,7 @@
 
 <% @favorites.each do |favorite| %>
   <!--Can I make this a partial? Or just add class-->
-  <h3><%= favorite.car.brand %></h3>
+  <h3><%= link_to favorite.car.brand, car_path(favorite.car) %></h3>
   <h4><%= favorite.car.model %></h4>
   <p><%= favorite.car.year %></p>
   <p><%= favorite.car.fuel %></p>
