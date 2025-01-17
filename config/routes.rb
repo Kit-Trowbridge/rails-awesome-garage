@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :cars, only: [:index, :show] do
     resources :reviews, only: :create
     # not sure if this needs to be nested .. probably will only be a button .. or should be
-    resources :favorites, only: [:index, :create]
+    resources :favorites, only: :create
   end
-  resources :favorites, only: :destroy
+  resources :favorites, only: [:index, :destroy]
 end
