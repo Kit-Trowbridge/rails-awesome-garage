@@ -9,6 +9,8 @@
     <em style="font-size: 14px"><%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %></em>
   </div>
   <div class="car-img" style="background-image: url(<%= car.image_url %>)">
+    <!--Yield to insert favorite button-->
+    <%= yield :favorite %>
   </div>
   <div class="new-review-section d-flex justify-content-end">
     <div class="pe-3">

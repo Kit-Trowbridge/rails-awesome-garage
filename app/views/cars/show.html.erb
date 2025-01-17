@@ -2,14 +2,15 @@
 <!--Because I'll want to add to it with the favorite button and comments etc-->
 <div class="card-container">
   <%= render 'car', car: @car %>
-
-  <!--Want to put this inside car_img - how do I put this in the render-->
-  <% if @car.favorites.empty? %>
-    <%= simple_form_for [@car, @favorite] do |f| %>
-      <%= f.submit 'Add to favorites <3' %>
+  <% content_for :favorite do %>
+    <!--Want to put this inside car_img - how do I put this in the render-->
+    <% if @car.favorites.empty? %>
+      <%= simple_form_for [@car, @favorite] do |f| %>
+        <%= f.submit 'Add to favorites <3' %>
+      <% end %>
+    <% else %>
+      <p>This car is already in your garage</p>
     <% end %>
-  <% else %>
-    <p>This car is already in your garage</p>
   <% end %>
 
   <!--Make bootstrap list-->
@@ -21,6 +22,7 @@
       </li>
     <% end %>
   </ul>
+
 
   <!--need to change class name-->
   <div class="new-review-section">
