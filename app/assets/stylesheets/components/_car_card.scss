@@ -1,8 +1,9 @@
 .car-card {
-  height: 400px;
+  height: 500px;
   border: 1px solid black;
   background-color: bisque;
   h3 {
     font-family: $header-font;
   }
+  margin-bottom: 50px;
 }
