@@ -13,21 +13,22 @@
       <% end %>
     </div>
   <% end %>
-  <div class="car-specs">
-    <h3><%= link_to "#{car.brand} #{car.model}", car_path(car) %></h3>
-    Year: <%= car.year %><br>
-    <% if car.fuel.present? %>
-      Fuel: <%= car.fuel.capitalize %><br>
-    <% end %>
-    <em style="font-size: 14px"><%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %></em>
-  </div>
+
   <div class="car-img" style="background-image: url(<%= car.image_url %>)">
   </div>
-  <div class="new-review-section d-flex justify-content-end">
-    <div class="pe-3">
+  <div class="new-review-section d-flex flex-column justify-content-end">
+    <div class="pe-3 align-self-end">
       <div class="owner-badge">
         <%= car.owner.nickname %>
       </div>
+    </div>
+    <div class="car-specs">
+      <h3><%= link_to "#{car.brand} #{car.model}", car_path(car) %></h3>
+      Year: <%= car.year %><br>
+      <% if car.fuel.present? %>
+        Fuel: <%= car.fuel.capitalize %><br>
+      <% end %>
+      <em style="font-size: 14px"><%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %></em>
     </div>
     <!--Add yield in here so that we can insert whole form on show,
     but on index, only a button that links to the review form section of the show page?-->
