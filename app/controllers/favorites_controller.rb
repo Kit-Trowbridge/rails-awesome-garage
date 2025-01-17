@@ -5,10 +5,15 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new
     @favorite.car = @car
     if @favorite.save
-      redirect_to car_favorites_path(@car)
+      # redirect_to car_favorites_path(@car)
+      # want to redirect to car show
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def index
+    @favorites = Favorite.all
   end
 
   def destroy

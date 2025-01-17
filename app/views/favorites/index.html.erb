@@ -1,0 +1,11 @@
+<h1>My favorites</h1>
+
+<% @favorites.each do |favorite| %>
+  <!--Can I make this a partial? Or just add class-->
+  <h3><%= favorite.car.brand %></h3>
+  <h4><%= favorite.car.model %></h4>
+  <p><%= favorite.car.year %></p>
+  <p><%= favorite.car.fuel %></p>
+  <p><%= favorite.car.created_at %></p>
+  <p><%= favorite.car.owner.nickname %></p>
+<% end %>
