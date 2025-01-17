@@ -1,5 +1,7 @@
 <div class="card-container">
   <% @cars.each do |car| %>
-    <%= render 'car', car: car, favorite: nil%>
+    <div class="car-card">
+      <%= render 'car', car: car, favorite: nil%>
+    </div>
   <% end %>
 </div>
