@@ -1,8 +1,10 @@
-<h3><%= link_to car.brand, car_path(car) %></h3>
-<h4><%= car.model %></h4>
-<p><%= car.year %></p>
-<% if car.fuel.present? %>
-  <p>Fuel: <%= car.fuel.capitalize %></p>
-<% end %>
-<p><%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
-<p><%= car.owner.nickname %></p>
+<div class="car-card">
+  <h3><%= link_to car.brand, car_path(car) %></h3>
+  <h4><%= car.model %></h4>
+  <p><%= car.year %></p>
+  <% if car.fuel.present? %>
+    <p>Fuel: <%= car.fuel.capitalize %></p>
+  <% end %>
+  <p><%= car.created_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
+  <p><%= car.owner.nickname %></p>
+</div>
